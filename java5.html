@@ -3,27 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>javascriptIT</title>
+<title>IT Assignment</title>
 <style>
 span{
-color:yellow;
+color:red;
 }
 </style>
 </head>
 <body>
-<label for="Name">Enter your Name: <span>*</span></label>
-<input type="text" id="fname" required>
-<button onclick="function1()">SUBMIT</button>
-<p id="para"></p>
+<h1>CALCULATOR</h1>
+<div>
+<label for="firstNumber">Enter the first number: <span>*</span></label>
+<input type="number" id="fno" pattern="[1-9]" required>
+<br>
+<br>
+<label for="secondNumber">Enter the second number: <span>*</span></label>
+<input type="number" id="sno" pattern="[1-9]" required>
+<br>
+<br>
+<button onclick="add();">ADD</button><span id="add"></span>
+<br>
+<br>
+<button onclick="sub();">SUBTRACT</button><span id="sub"></span>
+<br>
+<br>
+<button onclick="mul();">MULTIPLY</button><span id="mul"></span>
+<br>
+<br>
+<button onclick="div();">DIVIDE</button><span id="div"></span>
 <script>
-function function1(){
-var pname="";
-var name=document.getElementById("fname").value;
-for(let i=0;i<5;i++){
-pname+=name+"<br>";
+function add(){
+var n1=Number(document.getElementById("fno").value);
+var n2=Number(document.getElementById("sno").value);
+document.getElementById("add").innerHTML=" The sum is: "+(n1+n2);
 }
-document.getElementById("para").innerHTML=pname;
+function sub(){
+var n1=Number(document.getElementById("fno").value);
+var n2=Number(document.getElementById("sno").value);
+document.getElementById("sub").innerHTML=" The difference is: "+(n1-n2);
+}
+function mul(){
+var n1=Number(document.getElementById("fno").value);
+var n2=Number(document.getElementById("sno").value);
+if(n1<=0||n2<=0)
+document.getElementById("mul").innerHTML=" Number not allowed."
+else
+document.getElementById("mul").innerHTML=" The product is: "+(n1*n2);
+}
+function div(){
+var n1=Number(document.getElementById("fno").value);
+var n2=Number(document.getElementById("sno").value);
+if(n1<=0||n2<=0)
+document.getElementById("div").innerHTML=" Number not allowed."
+else
+document.getElementById("div").innerHTML=" The quotient is: "+(n1/n2);
 }
 </script>
+</div>
 </body>
 </html>
