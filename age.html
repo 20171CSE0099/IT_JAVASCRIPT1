@@ -1,0 +1,27 @@
+<html>
+<script>
+function validate()
+{
+var t = new Date();
+var age=document.forms["i"]["age"].value;
+var year=document.forms["i"]["year"].value;
+var x=t.getFullYear()-year;
+if (age==x)
+{
+window.alert("Age is correct");
+}
+else
+{
+window.alert("Age is Wrong");
+}
+
+}
+</script>
+<body>
+<form id="i" onsubmit="return validate()"  method="post">
+Age:<input type="text" name="age"><br/><br/>
+year:<input type="text" name="year"><br/><br/>
+<input type="submit" value="check"><br/><br/>
+</form>
+</body>
+</html>
